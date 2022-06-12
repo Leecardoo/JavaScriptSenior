@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 关于引用变量赋值问题
+            2个引用变量指向同一个对象，修改对象内部数据，另外一个变量看到的是修改之后的数据
+            2个引用变量指向同一个独享，让其中一个引用变量指向另一个对象，另一个引用变量依然指向前一个对象    
+        -->
+
+</body>
+<script>
+    var a = { age: 12 }
+    var b = a;
+    a = { name: 'tom', age: 13 }
+    b.age = 4;
+    console(a.age, a.name, b.age)
+    function fu(obj) {
+        obj = { age: 15 }
+    }
+    fu(a);
+</script>
+
+</html>

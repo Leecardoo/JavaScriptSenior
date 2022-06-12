@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        1.什么养的函数是回调函数
+            (1).你定义的
+            (2).你没有调用
+            (3).单最终它执行了
+        2.常见的回调函数
+            dom事件回调函数
+            定时器回调函数
+
+            ajax请求回调函数
+            声明周期回调函数
+    -->
+    <button id="btn01">anni</button>
+</body>
+<script>
+    document.getElementById("btn01").onclick = function () {//dom事件回调函数
+        alert(this.innerText);
+    }
+    //定时器
+    //超时定时器
+    //循环定时器
+    setTimeout(function () {
+        //定时器回调函数
+        alert('daoian le ')
+    }, 2000)
+</script>
+
+</html>
