@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  -->
+    <button>测试1</button><button>测试2</button><button>测试3</button>
+</body>
+<script>
+    let btnList = document.getElementsByTagName('button')
+    // for (let i = 0, length = btnList.length; i < length; i++) {
+    //     btnList[i].onclick = function () {
+    //         alert('这是第' + (i + 1) + '个按钮')
+    //     }
+    // }
+    for (var i = 0, length = btnList.length; i < length; i++) {
+        (function (i) {
+            btnList[i].onclick = function () {
+                alert('第' + (i + 1) + '个')
+            }
+        })(i);
+    }
+
+</script>
+
+</html>
