@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //第一题
+    let name = "the window";
+    let object = {
+        name: 'my Object',
+        getNameFun: function () {
+            return function () {
+                return this.name;
+            }
+        }
+    }
+    console.log(this.name);
+    // console.log(object.getNameFun()());//为什么用let会输出无输出呢
+    //第二题
+    var name2 = "the window";
+    var object2 = {
+        name2: "my Object",
+        getNameFun: function () {
+            var that = this;
+            return () => {
+                return this.name2
+            }
+        }
+    }
+    console.log(object2.getNameFun()());
+</script>
+
+</html>
