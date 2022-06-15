@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  
+        套路，通过工厂函数创建对象并返回
+        使用场景：需要创建多个对象
+        问题：对象没有一个具体的类型，都是Object类型
+    -->
+</body>
+<script>
+    function People(name, age) {
+        this.name = name
+        this.age = age
+        this.setName = function (name) {
+            this.name = name
+        }
+        this.setAge = function (age) {
+            this.age = age;
+        }
+    }
+    function createPerson(name, age) {
+        var obj = new Object();
+        obj.name = name;
+        obj.age = age;
+        obj.setName = function (name) {
+            this.name = name
+        }
+        obj.setAge = function (age) {
+            this.age = age;
+        }
+        return obj;
+    }
+    var p1 = new People('tom', 13);
+    var p2 = createPerson('bob', 14);
+    console.log(p1, typeof p1);
+    console.log(p2, typeof p2);
+
+</script>
+
+</html>

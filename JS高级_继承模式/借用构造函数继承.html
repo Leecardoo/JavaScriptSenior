@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  
+    方式2：借用构造函数继承（假的）
+        1.套路
+            1.定义父类型的构造函数
+            2.定义子类型的构造函数
+            3.在子类型构造函数中调用父类型构造
+        2.关键
+            1.在子类型构造函数中通用call（）调用父类型构造函数
+        -->
+
+
+</body>
+<script>
+    function Person(name, age) {
+        console.log(this)
+        this.name = name
+        this.age = age
+    }
+    function Student(name, age, price) {
+        Person.call(this, name, age)
+        this.price = price
+    }
+    var a1 = new Student('tom', 12, 12000);
+    console.log(a1);
+</script>
+
+</html>
